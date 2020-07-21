@@ -1,16 +1,16 @@
-### Hi there 👋
+# 👋 Howdy, its Jessica!
+I'm a freelance web designer and consultant from country Victoria, Australia. 
+
+- 🔭 Right now I’m working on [freelance projects](https://jessicasuther.land/)
+- 🌱 Currently learning more about starting my home lab
+- 💬 Ask me about diversity, ethics and inclusion
+- 😄 I use she/her programs 🏳️‍🌈💙🤍💕
+- ⚡ I've got over 8 years in web development
+- 🔓 Lover of open source software and long-time WordPress contributor
+- 🎓 Teacher of STEM, robotics skills and design
+
+### 📫 Contact me on [me@jessicasuther.land](mailto:me@jessicasuther.land)
 
 <!--
 **jsjsjsjsjsjsjsjs/jsjsjsjsjsjsjsjs** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
 -->
