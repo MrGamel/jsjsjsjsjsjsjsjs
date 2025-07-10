@@ -4,14 +4,11 @@ const { SlashCommandBuilder } = require('discord.js');
 module.exports = {
   data: new SlashCommandBuilder()
     .setName('ping')
-    .setDescription('Botun gecikmesini ölçer ve yanıt verir'),
-  
+    .setDescription('Botun gecikme süresini gösterir'),
+
   async execute(interaction) {
-    // İlk önce “Pinging...” mesajı gönderip yanıtını bekleyelim
-    const sent = await interaction.reply({ content: 'Pinging...', fetchReply: true });
-    
-    // Mesaj zaman damgalarından gecikmeyi hesaplayıp düzenleyelim
+    const sent = await interaction.reply({ content: '🏓 Pong?', fetchReply: true });
     const latency = sent.createdTimestamp - interaction.createdTimestamp;
-    await interaction.editReply(`🏓 Pong! Gecikme: ${latency}ms`);
+    await interaction.editReply(`🏓 Pong! Gecikme: ${latency}ms, API ping: ${Math.round(interaction.client.ws.ping)}ms`);
   },
 };
