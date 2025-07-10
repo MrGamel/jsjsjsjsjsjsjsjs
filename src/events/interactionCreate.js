@@ -1,8 +1,10 @@
 // src/events/interactionCreate.js
+const { EmbedBuilder } = require('discord.js');
+
 module.exports = {
   name: 'interactionCreate',
   async execute(interaction) {
-    // Slash komut mu?
+    // Slash komutlar
     if (interaction.isChatInputCommand()) {
       const cmd = interaction.client.commands.get(interaction.commandName);
       if (!cmd) return;
@@ -14,13 +16,27 @@ module.exports = {
       }
     }
 
-    // Buton veya seçili menü işlemleri için buraya ekleyebilirsin
-    if (interaction.isButton()) {
-      // interaction.customId ile buton işleme
+    // Buton etkileşimleri - /help komutu için
+    if (interaction.isButton() && interaction.customId.startsWith('help_')) {
+      const categories = {
+        '🛠️ Yönetim': ['ban', 'kick', 'mute'],
+        '🎵 Müzik': ['play', 'skip', 'queue'],
+        '📊 Utility': ['ping', 'status', 'help'],
+        '🎮 Eğlence': ['meme', 'trivia']
+      };
+
+      const idx = parseInt(interaction.customId.split('_')[1], 10);
+      const catName = Object.keys(categories)[idx];
+      const cmds = categories[catName].map(c => `\`${c}\``).join(' • ');
+
+      const embed = new EmbedBuilder()
+        .setTitle(`${catName} Komutları`)
+        .setDescription(cmds)
+        .setColor(0x00AE86);
+
+      await interaction.update({ embeds: [embed], components: [] });
     }
 
-    if (interaction.isSelectMenu()) {
-      // interaction.customId ile seçim menüsü işleme
-    }
+    // Select menu ya da başka interaction türleri eklemek istersen buraya yazabilirim.
   },
 };
